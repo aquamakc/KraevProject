@@ -8,18 +8,20 @@ import { FormsModule } from '@angular/forms';
 import { GenerateCustomInputsDirective } from './generate-input-directive/generate-input-directive.component';
 import { OnlyNumberComponentComponent } from './only-number-component/only-number-component.component';
 import { OnlyEmailComponentComponent } from './only-email-component/only-email-component.component';
+import { MyLibraryModule } from 'my-library';
 
 @NgModule({
   declarations: [
     AppComponent,
     GenerateCustomInputsDirective,
     OnlyNumberComponentComponent,
-    OnlyEmailComponentComponent
+    OnlyEmailComponentComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MyLibraryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
