@@ -16,25 +16,25 @@
           "strict": true
         }
       },
-      "root": "projects/home",
-      "sourceRoot": "projects/home/src",
+      "root": "projects/task1",
+      "sourceRoot": "projects/task1/src",
       "prefix": "home",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/home",
-            "index": "projects/home/src/index.html",
-            "main": "projects/home/src/main.ts",
-            "polyfills": "projects/home/src/polyfills.ts",
-            "tsConfig": "projects/home/tsconfig.app.json",
+            "index": "projects/task1/src/index.html",
+            "main": "projects/task1/src/main.ts",
+            "polyfills": "projects/task1/src/polyfills.ts",
+            "tsConfig": "projects/task1/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/home/src/favicon.ico",
-              "projects/home/src/assets"
+              "projects/task1/src/favicon.ico",
+              "projects/task1/src/assets"
             ],
             "styles": [
-              "projects/home/src/styles.scss"
+              "projects/task1/src/styles.scss"
             ],
             "scripts": []
           },
@@ -54,8 +54,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/home/src/environments/environment.ts",
-                  "with": "projects/home/src/environments/environment.prod.ts"
+                  "replace": "projects/task1/src/environments/environment.ts",
+                  "with": "projects/task1/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -92,17 +92,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/home/src/test.ts",
-            "polyfills": "projects/home/src/polyfills.ts",
-            "tsConfig": "projects/home/tsconfig.spec.json",
-            "karmaConfig": "projects/home/karma.conf.js",
+            "main": "projects/task1/src/test.ts",
+            "polyfills": "projects/task1/src/polyfills.ts",
+            "tsConfig": "projects/task1/tsconfig.spec.json",
+            "karmaConfig": "projects/task1/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/home/src/favicon.ico",
-              "projects/home/src/assets"
+              "projects/task1/src/favicon.ico",
+              "projects/task1/src/assets"
             ],
             "styles": [
-              "projects/home/src/styles.scss"
+              "projects/task1/src/styles.scss"
             ],
             "scripts": []
           }
@@ -270,6 +270,109 @@
             "main": "projects/my-library/src/test.ts",
             "tsConfig": "projects/my-library/tsconfig.spec.json",
             "karmaConfig": "projects/my-library/karma.conf.js"
+          }
+        }
+      }
+    },
+    "Task2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/task2",
+      "sourceRoot": "projects/task2/src",
+      "prefix": "Task2",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Task2",
+            "index": "projects/task2/src/index.html",
+            "main": "projects/task2/src/main.ts",
+            "polyfills": "projects/task2/src/polyfills.ts",
+            "tsConfig": "projects/task2/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/task2/src/favicon.ico",
+              "projects/task2/src/assets"
+            ],
+            "styles": [
+              "projects/task2/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/task2/src/environments/environment.ts",
+                  "with": "projects/task2/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "Task2:build:production"
+            },
+            "development": {
+              "browserTarget": "Task2:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Task2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/task2/src/test.ts",
+            "polyfills": "projects/task2/src/polyfills.ts",
+            "tsConfig": "projects/task2/tsconfig.spec.json",
+            "karmaConfig": "projects/task2/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/task2/src/favicon.ico",
+              "projects/task2/src/assets"
+            ],
+            "styles": [
+              "projects/task2/src/styles.scss"
+            ],
+            "scripts": []
           }
         }
       }
