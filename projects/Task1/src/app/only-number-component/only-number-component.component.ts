@@ -8,9 +8,6 @@ import { Component } from '@angular/core';
 export class OnlyNumberComponentComponent {
 
   isValid: boolean = false;
-
-  constructor() { }
-
   regexpNumber = new RegExp('^[0-9]+$');
   textValue:string = "";
 

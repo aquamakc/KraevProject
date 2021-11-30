@@ -7,9 +7,7 @@ import { Component } from '@angular/core';
 })
 export class OnlyEmailComponentComponent {
 
-  constructor() { }
-
-  regexpNumber = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
+  regexpNumber = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$');
   textValue:string = "";
   isValid: boolean = false;
 

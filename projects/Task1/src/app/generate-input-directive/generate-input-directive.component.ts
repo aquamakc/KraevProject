@@ -1,10 +1,8 @@
 import {
-  Component,
   ComponentFactoryResolver,
   Directive,
   Input,
   OnDestroy,
-  TemplateRef,
   ViewContainerRef
 } from '@angular/core';
 import { OnlyEmailComponentComponent } from '../only-email-component/only-email-component.component';
